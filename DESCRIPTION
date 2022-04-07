@@ -1,0 +1,10 @@
+Package: IntraPat
+Title: Intra-patient Dose Escalation Design for Phase I Dose-Finding Trials 
+Version: 0.1.0
+Authors@R: 
+    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Implement simulation of the 3+3 design, the CRM and the BOIN with and without an intra-patient dose escalations stage.
+Imports: tidyverse, magrittr, bcrm, BOIN
+License: GPL (>= 2)
+Encoding: UTF-8

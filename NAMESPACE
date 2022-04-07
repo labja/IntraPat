@@ -1,0 +1,5 @@
+import(magrittr)
+export(sim_trial)
+export(sim_trials)
+export(summary_trials)
+export(summary_trial)
