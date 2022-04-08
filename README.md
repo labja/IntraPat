@@ -25,7 +25,7 @@ single_trial$res_pat
 # Summarized results of simulated trial
 summary_trial(single_trial)
 
-multiple_trials <- sim_trials(method=method,tox_rates=tox_rates,target=target,intra_days=intra_day,nsim=nsim)
+multiple_trials <- sim_trials(method=method,tox_rates=tox_rates,target=target,intra_days=intra_days,nsim=nsim)
 # Result of simulated trials
 multiple_trials$res
 # Summarized results of simulated trials
