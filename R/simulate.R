@@ -218,14 +218,14 @@ summary_trials <- function(res_list) {
   freq_dose <- res_list$res_dose %>%
     dplyr::group_by(dose_level) %>%
     dplyr::summarise(n_pat=sum(n),.groups="drop") %>%
-    dplyr::ungroup %>%
+    dplyr::ungroup() %>%
     dplyr::mutate(freq_pat=n_pat/sum(n_pat),true_mtd=dose_level==true_mtd)
 
   # Get frequency of RP2D at dose level
   freq_mtd_est <- res_list$res %>%
     dplyr::group_by(mtd_est) %>%
     dplyr::summarise(n_rp2d=dplyr::n(),.groups="drop") %>%
-    dplyr::ungroup %>%
+    dplyr::ungroup() %>%
     dplyr::mutate(freq_rp2d=n_rp2d/sum(n_rp2d),true_mtd=mtd_est==true_mtd)
 
   # Remove this later because included in freq_mtd_est as well?
