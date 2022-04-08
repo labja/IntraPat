@@ -31,3 +31,11 @@ multiple_trials$res
 # Summarized results of simulated trials
 summary_trials(multiple_trials)
 ```
+
+## Accessing simulated data
+
+``` r
+data(S1_BCRM)
+summary_trials(S1_BCRM)
+```
+
