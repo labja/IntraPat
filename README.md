@@ -88,7 +88,7 @@ multiple_trials$res
 # 13     6       2
 # 26    11       1
 ```
-Each row displays the number of patients (n_pat), the number of DLTs (n_dlt) and the estimated MTD (mtd_est) for a simulated trial. For example, row 1 are the results of the example above.
+Each row displays the number of patients (n_pat), the number of DLTs (n_dlt) and the estimated MTD (mtd_est) for a simulated trial. Row 1 are the results of the example above of a single simulated trial.
 ``` r
 summary_trials(multiple_trials)
 # Summarized results of simulated trials
