@@ -48,13 +48,19 @@ The first three rows display the intra-patient dose escalation stage for the fir
 summary_trial(single_trial)
 # $n_pat
 # [1] 10
-# 
+```
+n_pat displays the total number of patients included in the trial. In this case one patient in the intra-patient stage and nine patients in the 3+3 stage sums to ten. 
+``` r
 # $n_dlt
 # [1] 3
-# 
+```
+n_dlt displays the total number of DLTs in the trial. In this case one DLT in the intra-patient stage and two DLTs in the 3+3 stage sum to three.
+``` r
 # $mtd_est
 # [1] 2
-# 
+```
+mtd_est displays the estimated MTD at the end of the trial.
+``` r
 # $res_dose
 # # A tibble: 4 x 3
 # dose_level     n   dlt
@@ -64,7 +70,7 @@ summary_trial(single_trial)
 # 3          3  3.25     2
 # 4          4  0.25     1
 ```
-n_pat displays the total number of patients included in the trial. In this case one patient in the intra-patient stage and nine patients in the 3+3 stage sums to ten. n_dlt displays the total number of DLTs in the trial. In this case one DLT in the intra-patient stage and two DLTs in the 3+3 stage sum to three. mtd_est displays the estimated MTD at the end of the trial. res_dose is a data frame which displays the number of fully treated patients (n) and the number of DLTS (dlt) at each dose level. A dose given during the intra-stage counts as 1/intra_days full treatments. In this case one patient in the intra-patient stage and six patients in the 3+3 stage sum to 6.25 full treatments at dose level 2.
+res_dose is a data frame which displays the number of fully treated patients (n) and the number of DLTS (dlt) at each dose level. A dose given during the intra-stage counts as 1/intra_days full treatments. In this case one patient in the intra-patient stage and six patients in the 3+3 stage sum to 6.25 full treatments at dose level 2.
 ### Simulating multiple trials
 ``` r
 multiple_trials <- sim_trials(method=method,tox_rates=tox_rates,target=target,intra_days=intra_days,nsim=nsim,seed=seed)
@@ -89,10 +95,14 @@ summary_trials(multiple_trials)
 # $res_median
 # n_pat n_dlt mtd_est
 # apply.res_list.res..2..median.  18.5   6.5       2
-# 
+```
+res_median displays the median values over the simulated trials.
+``` r
 # $accuracy
 # [1] 0.3
-# 
+```
+accuracy is the percentage of trials which recommend the correct dose for phase II. 
+``` r
 # $freq_dose
 # # A tibble: 5 x 4
 # dose_level n_pat freq_pat true_mtd
@@ -102,7 +112,9 @@ summary_trials(multiple_trials)
 # 3          3  49.2   0.270  TRUE    
 # 4          4  48.8   0.267  FALSE   
 # 5          5  28.5   0.156  FALSE   
-# 
+```
+freq_dose displays the doses given at each dose level. n_pat is the total number of fully treated patients at each dose level. As before a dose in the intra-patient escalation stage is counted as 1/intra_days full treatments. 
+``` r
 # $freq_mtd_est
 # # A tibble: 4 x 4
 # mtd_est n_rp2d freq_rp2d true_mtd
@@ -112,7 +124,7 @@ summary_trials(multiple_trials)
 # 3       3      3       0.3 TRUE    
 # 4       4      1       0.1 FALSE   
 ```
-res_median displays the median values over the simulated trials. accuracy is the percentage of trials which recommend the correct dose for phase II. freq_dose displays the doses given at each dose level. n_pat is the total number of fully treated patients at each dose level. As before a dose in the intra-patient escalation stage is counted as 1/intra_days full treatments. freq_pat is the frequency a dose level has been given. For example, in this case 4.66 % of doses have been given at dose level 1. freq_mtd_est display the how often a dose is recommended for phase II. n_rp2d is the total number and freq_rp2d is the frequency. For example, in this case dose level 3 is recommended in three out of ten trials (30 %).
+freq_pat is the frequency a dose level has been given. For example, in this case 4.66 % of doses have been given at dose level 1. freq_mtd_est display the how often a dose is recommended for phase II. n_rp2d is the total number and freq_rp2d is the frequency. For example, in this case dose level 3 is recommended in three out of ten trials (30 %).
 
 ## Accessing simulated data
 
