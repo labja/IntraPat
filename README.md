@@ -113,7 +113,7 @@ accuracy is the percentage of trials which recommend the correct dose for phase 
 # 4          4  48.8   0.267  FALSE   
 # 5          5  28.5   0.156  FALSE   
 ```
-freq_dose displays the doses given at each dose level. n_pat is the total number of fully treated patients at each dose level. As before a dose in the intra-patient escalation stage is counted as 1/intra_days full treatments. 
+freq_dose displays the doses given at each dose level. n_pat is the total number of fully treated patients at each dose level. As before a dose in the intra-patient escalation stage is counted as 1/intra_days full treatments. freq_pat is the frequency a dose level has been given. For example, in this case 4.66 % of doses have been given at dose level 1.
 ``` r
 # $freq_mtd_est
 # # A tibble: 4 x 4
@@ -124,7 +124,7 @@ freq_dose displays the doses given at each dose level. n_pat is the total number
 # 3       3      3       0.3 TRUE    
 # 4       4      1       0.1 FALSE   
 ```
-freq_pat is the frequency a dose level has been given. For example, in this case 4.66 % of doses have been given at dose level 1. freq_mtd_est display the how often a dose is recommended for phase II. n_rp2d is the total number and freq_rp2d is the frequency. For example, in this case dose level 3 is recommended in three out of ten trials (30 %).
+freq_mtd_est display the how often a dose is recommended for phase II. n_rp2d is the total number and freq_rp2d is the frequency. For example, in this case dose level 3 is recommended in three out of ten trials (30 %).
 
 ## Accessing simulated data
 
