@@ -50,6 +50,7 @@ single_trial$res_pat
 ```
 * **pat** Patient number
 * **dose_level** Dose level of the treatment
+* **dlt** Whether a DLT occured (1=DLT, 0=no DLT)
 * **design** Which design is used for the treatment
 
 The first three rows display the intra-patient dose escalation stage for the first patient until they experience a DLT at dose level 4. Rows 4 to 13 display the results of the following stage which employs a 3+3 design. Patients 1, 2 and 3 start at dose level 3, i.e. the highest dose level with no DLT in the intra-patient dose escalation stage. As there are two DLTs at dose level 3 the dose is de-escalated to dose level 2. Patients 4, 5 and 6 don't experience any DLT and therefore dose level 2 is chosen as the MTD. A dose expansion phase follows and treats patients 7, 8 and 9 at dose level 2.
