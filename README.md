@@ -58,19 +58,13 @@ The first three rows display the intra-patient dose escalation stage for the fir
 summary_trial(single_trial)
 # $n_pat
 # [1] 10
-```
-n_pat displays the total number of patients included in the trial. In this case one patient in the intra-patient stage and nine patients in the 3+3 stage sums to ten. 
-``` r
+#
 # $n_dlt
 # [1] 3
-```
-n_dlt displays the total number of DLTs in the trial. In this case one DLT in the intra-patient stage and two DLTs in the 3+3 stage sum to three.
-``` r
+#
 # $mtd_est
 # [1] 2
-```
-mtd_est displays the estimated MTD at the end of the trial.
-``` r
+#
 # $res_dose
 # # A tibble: 4 x 3
 # dose_level     n   dlt
@@ -80,7 +74,11 @@ mtd_est displays the estimated MTD at the end of the trial.
 # 3          3  3.25     2
 # 4          4  0.25     1
 ```
-res_dose is a data frame which displays the number of fully treated patients (n) and the number of DLTS (dlt) at each dose level. A dose given during the intra-stage counts as 1/intra_days full treatments. In this case one patient in the intra-patient stage and six patients in the 3+3 stage sum to 6.25 full treatments at dose level 2.
+* **n_pat** Displays the total number of patients included in the trial. In this case one patient in the intra-patient stage and nine patients in the 3+3 stage sums to ten. 
+* **n_dlt** Displays the total number of DLTs in the trial. In this case one DLT in the intra-patient stage and two DLTs in the 3+3 stage sum to three.
+* **mtd_est** Displays the estimated MTD at the end of the trial.
+* **res_dose** Data frame which displays the number of fully treated patients (n) and the number of DLTS (dlt) at each dose level. A dose given during the intra-stage counts as 1/intra_days full treatments. In this case one patient in the intra-patient stage and six patients in the 3+3 stage sum to 6.25 full treatments at dose level 2.
+
 ### Simulating multiple trials
 ``` r
 multiple_trials <- sim_trials(method=method,tox_rates=tox_rates,target=target,intra_days=intra_days,nsim=nsim,seed=seed)
@@ -106,7 +104,7 @@ summary_trials(multiple_trials)
 # n_pat n_dlt mtd_est
 # apply.res_list.res..2..median.  18.5   6.5       2
 ```
-res_median displays the median values over the simulated trials.
+res_median displays the median values for the number of patients (n_pat), the number of DLTs (n_dlt) and the estimated MTD (mtd_est) over the simulated trials.
 ``` r
 # $accuracy
 # [1] 0.3
