@@ -20,7 +20,13 @@ intra_days <- 4
 nsim <- 10
 seed <- 1
 ```
-Alternative design choices are "BCRM" and "BOIN".
+
+* **method** Vector of dose-finding designs to be employed. The designs will be applied sequentially with the estimated MTD from the previous design as the starting dose. Possible options are "Intra" for Intra-patient escalation, "TPT" for the 3+3 design, "BCRM" for (Bayesian) Continual Reassessment Method and "BOIN" for Bayesian Optimal Interval Design.
+* **tox_rates** Vector of true toxicity rates for each dose level in ascending order
+* **target** Target toxicity rate
+* **intra_days** How many single treatments are given
+* **nsim** Number of simulated trials when simulating multiple trials
+
 ### Simulating a single trial
 ``` r
 set.seed(seed)
@@ -42,6 +48,10 @@ single_trial$res_pat
 # 8          2   0    TPT
 # 9          2   0    TPT
 ```
+* **pat** Patient number
+* **dose_level** Dose level of the treatment
+* **design** Which design is used for the treatment
+
 The first three rows display the intra-patient dose escalation stage for the first patient until they experience a DLT at dose level 4. Rows 4 to 13 display the results of the following stage which employs a 3+3 design. Patients 1, 2 and 3 start at dose level 3, i.e. the highest dose level with no DLT in the intra-patient dose escalation stage. As there are two DLTs at dose level 3 the dose is de-escalated to dose level 2. Patients 4, 5 and 6 don't experience any DLT and therefore dose level 2 is chosen as the MTD. A dose expansion phase follows and treats patients 7, 8 and 9 at dose level 2.
 ``` r
 # Summarized results of simulated trial
@@ -113,7 +123,12 @@ accuracy is the percentage of trials which recommend the correct dose for phase 
 # 4          4  48.8   0.267  FALSE   
 # 5          5  28.5   0.156  FALSE   
 ```
-freq_dose displays the doses given at each dose level. n_pat is the total number of fully treated patients at each dose level. As before a dose in the intra-patient escalation stage is counted as 1/intra_days full treatments. freq_pat is the frequency a dose level has been given. For example, in this case 4.66 % of doses have been given at dose level 1.
+freq_dose displays the doses given at each dose level
+* **dose_lvel** The dose level
+* **n_pat** The total number of fully treated patients at each dose level. As before a dose in the intra-patient escalation stage is counted as 1/intra_days full treatments
+* **freq_rp2d** The frequency a dose level has been given over all trials combined
+* **true_mtd** Whether the dose level is the correct recommendation for phase II
+
 ``` r
 # $freq_mtd_est
 # # A tibble: 4 x 4
@@ -124,7 +139,11 @@ freq_dose displays the doses given at each dose level. n_pat is the total number
 # 3       3      3       0.3 TRUE    
 # 4       4      1       0.1 FALSE   
 ```
-freq_mtd_est display the how often a dose is recommended for phase II. n_rp2d is the total number and freq_rp2d is the frequency. For example, in this case dose level 3 is recommended in three out of ten trials (30 %).
+freq_mtd_est displays how often a dose is recommended for phase II
+* **mtd_est** The dose level
+* **n_rp2d** Total number of trials for which that dose level is recommendend for phase II
+* **freq_rp2d** Percentage of trials for which that dose level is recommendend for phase II
+* **true_mtd** Whether the dose level is the correct recommendation for phase II
 
 ## Accessing simulated data
 
