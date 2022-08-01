@@ -147,6 +147,7 @@ freq_mtd_est displays how often a dose is recommended for phase II
 ## Accessing simulated data
 
 ``` r
+# Main document
 data(S1_BCRM)
 data(S1_BOIN)
 data(S1_TPT)
@@ -171,5 +172,30 @@ data(S8_TPT)
 data(S8_Intra_BCRM)
 data(S8_Intra_BOIN)
 data(S8_Intra_TPT)
+#Appendix
+data(S2_BCRM)
+data(S2_BOIN)
+data(S2_TPT)
+data(S2_Intra_BCRM)
+data(S2_Intra_BOIN)
+data(S2_Intra_TPT)
+data(S3_BCRM)
+data(S3_BOIN)
+data(S3_TPT)
+data(S3_Intra_BCRM)
+data(S3_Intra_BOIN)
+data(S3_Intra_TPT)
+data(S5_BCRM)
+data(S5_BOIN)
+data(S5_TPT)
+data(S5_Intra_BCRM)
+data(S5_Intra_BOIN)
+data(S5_Intra_TPT)
+data(S7_BCRM)
+data(S7_BOIN)
+data(S7_TPT)
+data(S7_Intra_BCRM)
+data(S7_Intra_BOIN)
+data(S7_Intra_TPT)
 ```
 
