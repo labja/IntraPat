@@ -1,5 +1,8 @@
 # IntraPat
 
+This repository contains the code associated with the following article
+http://doi.org/10.1002/pst.2268
+
 ## Installation
 
 You can install this package from GitHub with
